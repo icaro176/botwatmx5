@@ -38,21 +38,21 @@ const { ind } = require('./language')
 /********** MENU SETTING **********/
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Affis Admin\n' 
+            + 'FN:❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=557996096237:+55 79 9609-6237\n' 
             + 'END:VCARD' 
 blocked = []   
 prefix = '#'
 limitawal = 30
 memberlimit = 0
-ator = 'AMEL cans'
-namo = 'jangan colong'
-cr = '*BOT INI SUDAH TERVERIFIKASI*'
+ator = 'Icaro'
+namo = 'BOT BAIANO'
+cr = '*BOT ON*'
 /*************************************/
 
 /******** OWNER NUMBER**********/
-const ownerNumber = ["62895710073737@s.whatsapp.net","6282334297175@s.whatsapp.net"] 
+const ownerNumber = ["557996096237@s.whatsapp.net","15135477645@s.whatsapp.net"] 
 /************************************/
 
        
@@ -718,7 +718,20 @@ client.on('group-participants-update', async (anu) => {
 				const cekExp = ms(getPremiumExpired(sender) - Date.now())
 				reply(`*「 PREMIUM EXPIRED 」*\n\n➸ *ID*: ${sender.split('@')[0]}\n➸ *Premium left*: ${cekExp.days} day(s) ${cekExp.hours} hour(s) ${cekExp.minutes} minute(s)`)
 				break
-				
+                  case 'play':
+                  case 'playmp3':
+                  play = body.slice(5)
+                  if (!isRegistered) return reply(ind.noregis())
+		  if (isLimit(sender)) return reply(ind.limitend(pusname)) 
+                reply(ind.wait())
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
+               if (anu.error) return reply(anu.error)
+                 infomp3 = `*╭─「 PLAY DOWNLOAD 」*\n│\n│ *• Título* : ${anu.result.title}\n│ *• Fonte* : ${anu.result.source}\n│ *• Tamanho* : ${anu.result.size}\n│\n│ *A MÚSICA ESTA SENDO*\n│ *ENVIADA*\n│ *By ©❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥*\n╰───────────`
+                buffer = await getBuffer(anu.result.thumbnail)
+                lagu = await getBuffer(anu.result.url_audio)
+                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+                break								
 				//qr 
 				case 'qrcode':
 				if (!isRegistered) return reply(ind.noregis())
@@ -881,23 +894,22 @@ client.on('group-participants-update', async (anu) => {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
                 data = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(6)}&apikey=BotWeA`, {method: 'get'})
                if (data.error) return reply(data.error)
-                 infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${data.result.judul}\nAlbum : ${data.result.album}\nDipublikasi : ${data.result.dipublikasi}`
+                 infomp3 = `*╭─「 JOOX DOWNLOAD 」*\n│\n│ *• Título* : ${data.result.judul}\n│ *• Álbum* : ${data.result.album}\n│ *• Publicado* : ${data.result.dipublikasi}`
                 buffer = await getBuffer(data.result.thumb)
                 lagu = await getBuffer(data.result.mp3)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${data.result.title}.mp3`, quoted: mek})
                 await limitAdd(sender)
                 break
-				//freerestapi 
-				case 'igstalk':
-                   if (!isRegistered) return reply(ind.noregis())
-                   if (isLimit(sender)) return reply(ind.limitend(pusname))
-                     hmm = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/igs?u=${body.slice(9)}`)
-                     buffer = await getBuffer(hmm.data.profilehd)
-                     hasil = `Fullname : ${hmm.data.fullname}\npengikut : ${hmm.data.follower}\nMengikuti : ${hmm.data.following}\nPrivate : ${hmm.data.private}\nVerified : ${hmm.data.verified}\nbio : ${hmm.data.bio}`
+			   case 'igstalk':
+			   if (!isRegistered) return reply(ind.noregis())
+			   if (isLimit(sender)) return reply(ind.limitend(pusname))
+                      hmm = await fetchJson(`https://anker-api.herokuapp.com/igstalk?username=${body.slice(9)}`)
+                     buffer = await getBuffer(hmm.pic)
+                     hasil = `*Usuário* : *_${hmm.username}_*\n*Seguidores* : *_${hmm.follower}_*\n*Seguindo* : *_${hmm.following}_*\n*Bio* : ${hmm.bio}\n*Postagens* : *_${hmm.post}_*`
                     client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
                     await limitAdd(sender)
-					break 
+                    break
 				//daftar 
 				case 'daftar':
                 if (isRegistered) return  reply(ind.rediregis())
@@ -905,10 +917,10 @@ client.on('group-participants-update', async (anu) => {
                 const namaUser = q.substring(0, q.indexOf('|') - 0)
                 const umurUser = q.substring(q.lastIndexOf('|') + 1)
                 const serialUser = createSerial(20)
-                if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
-                if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
-                if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
-                if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
+                if(isNaN(umurUser)) return await reply('A idade deve ser um número!!')
+                if (namaUser.length >= 30) return reply(`por que seu nome é tão longo em fdp`)
+                if (umurUser > 40) return reply(`Idade mínima de 12 anos e no máximo 40 anos`)
+                if (umurUser < 12) return reply(`Idade mínima de 12 anos e no máximo 40 anos`)
                 try {
 					ppimg = await client.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 				} catch {
@@ -931,21 +943,20 @@ client.on('group-participants-update', async (anu) => {
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
                 }
 				break
-				//terhambar 
-				case 'quotemaker':
-                if (!isRegistered) return reply(ind.noregis())
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                var gh = body.slice(12)
-					var quote = gh.split("|")[0];
-					var wm = gh.split("|")[1];
-					const pref = `Usage: \n${prefix}quotemaker teks|watermark\n\nEx :\n${prefix}quotemaker ini contoh|bicit`
+			    case 'quotemaker':
+			    if (!isRegistered) return reply(ind.noregis())
+			    if (isLimit(sender)) return reply(ind.limitend(pusname))
+					gh = `${body.slice(12)}`
+					quote = gh.split("/")[0];
+					wm = gh.split("/")[1];
+					bg = gh.split("/")[2];
+					const pref = `Uso: \n${prefix}quotemaker texto/marca d'água/tema\n\nEx :\n${prefix}quotemaker aqui está um exemplo/bot/random`
 					if (args.length < 1) return reply(pref)
-					reply(ind.wait())
-					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=random`, {method: 'get'})
+					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=${bg}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {caption: 'Nih anjim', quoted: mek})
-					await limitAdd(sender)
-					break
+					client.sendMessage(from, buffer, image, {quoted: mek})
+					await limitAdd(sender) 
+					break 
 				//fadli 
 				case 'pinterest':
 					if (!isRegistered) return reply(ind.noregis())
@@ -963,7 +974,6 @@ client.on('group-participants-update', async (anu) => {
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
                    if (!isGroup) return reply(ind.groupo())
-                   if (!isNsfw) return reply(ind.nsfwoff())
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=pokemon`, {method: 'get'})
 					reply(ind.wait())
 					var n = JSON.parse(JSON.stringify(anu));
@@ -976,7 +986,6 @@ client.on('group-participants-update', async (anu) => {
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
                    if (!isGroup) return reply(ind.groupo())
-                   if (!isNsfw) return reply(ind.nsfwoff())
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
 					reply(ind.wait())
 					var n = JSON.parse(JSON.stringify(anu));
@@ -985,6 +994,17 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, pok, image, { quoted: mek })
 					await limitAdd(sender)
 					break
+                case 'kucing':
+                if (!isRegistered) return reply(ind.noregis())
+                if (isLimit(sender)) return reply(ind.limitend(pusname))
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
+					reply(ind.wait())
+					n = JSON.parse(JSON.stringify(anu));
+					nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek , caption: '🐈'})
+					await limitAdd(sender) 
+					break 
 				//jojo 
 				case 'stickerhide':
 				    ranp = getRandom('.gif')
