@@ -123,14 +123,14 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┃ □╭╯ v6.0
 ┃ □┊✧ུNome : *${pushname}*
 ┃ □┊✧ུNúmero : *wa.me/${sender.split("@")[0]}*
-┃ □┊✧ུDinheiro : R$ ${uangku}*
+┃ □┊✧ུDinheiro : R$ *${uangku}*
 ┃ □┊✧ུXP : *${getLevelingXp(sender)}/${reqXp}*
 ┃ □┊✧ུLevel : *{getLevelingLevel(sender)}*
 ┃ □┊✧ུPatente : *${role}*
 ╰▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔❁ཻུ۪۪⸙͎
 
 
- ----🔰 ${a}❏MAKER MENU${a} 🔰-----
+ ----🔰 ${a}❏MENU CRIADOR${a} 🔰-----
 ●┊➳ ${a}╿•${prefix}sticker${a}
 ●┊➳ ${a}╿•${prefix}quotemaker${a}
 ●┊➳ ${a}╿•${prefix}qrcode${a}
@@ -156,7 +156,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ●┊➳ ${a}╿•${prefix}tiktokstalk${a} *[VIP]*
 ●┊➳ ${a}╿•${prefix}ssweb${a}
 ●┊➳ ${a}╰•${prefix}kbbi${a}
- -----🔰 ${a}❏SONG${a} 🔰-----
+ -----🔰 ${a}❏DOWNLOAD${a} 🔰-----
  ${a}╰•${prefix}joox${a} *[VIP]*
  -----🔰 ${a}❏NSFW${a} 🔰-----
 ●┊➳ ${a}╿•${prefix}anjing${a}
@@ -168,14 +168,14 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ●┊➳ ${a}╿•${prefix}cium${a}
 ●┊➳ ${a}╿•${prefix}peluk${a}
 ●┊➳ ${a}╰•${prefix}ranime${a}
- -----🔰 ${a}❏LIMIT & UANG${a} 🔰-----
+ -----🔰 ${a}❏LIMIT & DINHEIRO${a} 🔰-----
 ●┊➳ ${a}╿•${prefix}limit${a}
 ●┊➳ ${a}╿•${prefix}buylimit${a}
 ●┊➳ ${a}╿•${prefix}transfer${a}
 ●┊➳ ${a}╿•${prefix}dompet${a}
 ●┊➳ ${a}╿•${prefix}level${a}
 ●┊➳ ${a}╰•${prefix}giftlimit${a}
- -----🔰 ${a}❏GROUP MENU${a} 🔰-----
+ -----🔰 ${a}❏MENU GRUPO${a} 🔰-----
 ●┊➳ ${a}╿•${prefix}delete${a}
 ●┊➳ ${a}╿•${prefix}hidetag${a}
 ●┊➳ ${a}╿•${prefix}blocklist${a}
@@ -211,7 +211,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ●┊➳ ${a}╿•${prefix}addaudio${a}
 ●┊➳ ${a}╿•${prefix}getaudio${a}
 ●┊➳ ${a}╰•${prefix}audiolist${a}
- -----🔰 ${a}❏OWNER MENU${a} 🔰-----
+ -----🔰 ${a}❏PROPRIETÁRIO${a} 🔰-----
 ●┊➳ ${a}╿•${prefix}bc${a}
 ●┊➳ ${a}╿•${prefix}addbadword${a}
 ●┊➳ ${a}╿•${prefix}delbadword${a}
