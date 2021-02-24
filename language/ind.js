@@ -118,27 +118,22 @@ exports.reglevelahf = (command, pushname, getLevelingLevel, sender, ahf) => {
 
 exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp, _registered, uangku, role, premi) => { 
 	return `
-┏━━━⊱  *ABOUT USER*  ⊰━━┓
-┣⊱ *Nama* : ${pushname}
-┣⊱ *Premium* : ${premi}
-┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
-┣⊱ *Uang mu* : Rp${uangku}
-┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp} 
-┣⊱ *Level* : ${getLevelingLevel(sender)}
-┣⊱ *Role* : ${role}
-┣⊱ *User register* : ${_registered.length}
-┗━━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━━┛
+╭▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂╮
+┃ ❥─┯─SOBRE USUÁRIO──╝
+┃ □╭╯✧ུNama : ${pushname}
+┃ □┊*Nomer* : wa.me/${sender.split("@")[0]}
+┃ □┊*Uang mu* : Rp${uangku}
+┃ □┊*XP* : ${getLevelingXp(sender)}/${reqXp} 
+┃ □┊*Level* : ${getLevelingLevel(sender)}
+┃ □┊*Role* : ${role}
 
- *${prefix}info*
- *${prefix}donasi*
- *${prefix}owner*
 
-${a}❏MAKER MENU${a}
+ ----🔰 ${a}❏MAKER MENU${a} 🔰-----
  ${a}╿•${prefix}sticker${a}
  ${a}╿•${prefix}quotemaker${a}
  ${a}╿•${prefix}qrcode${a}
  ${a}╰•${prefix}ttp${a}
-${a}❏FUN MENU${a}
+ -----🔰 ${a}❏FUN MENU${a} 🔰-----
  ${a}╿•${prefix}lirik${a}
  ${a}╿•${prefix}artinama${a}
  ${a}╿•${prefix}chord${a}
@@ -150,10 +145,7 @@ ${a}❏FUN MENU${a}
  ${a}╿•${prefix}tampar${a}
  ${a}╿•${prefix}moddroid${a} *[VIP]*
  ${a}╰•${prefix}happymod${a} *[VIP]*
-${a}❏MUTUAL${a}
- ${a}╿•${prefix}mutual${a}
- ${a}╰•${prefix}next${a}
-${a}❏MEDIA MENU${a}
+ -----🔰 ${a}❏MEDIA MENU${a} 🔰-----
  ${a}╿•${prefix}brainly${a} *[VIP]*
  ${a}╿•${prefix}pinterest${a}
  ${a}╿•${prefix}resepmasakan${a}
@@ -162,9 +154,9 @@ ${a}❏MEDIA MENU${a}
  ${a}╿•${prefix}tiktokstalk${a} *[VIP]*
  ${a}╿•${prefix}ssweb${a}
  ${a}╰•${prefix}kbbi${a}
-${a}❏SONG${a}
+ -----🔰 ${a}❏SONG${a} 🔰-----
  ${a}╰•${prefix}joox${a} *[VIP]*
-${a}❏NSFW${a}
+ -----🔰 ${a}❏NSFW${a} 🔰-----
  ${a}╿•${prefix}anjing${a}
  ${a}╿•${prefix}blowjob${a}
  ${a}╿•${prefix}nekonime${a}
@@ -174,14 +166,14 @@ ${a}❏NSFW${a}
  ${a}╿•${prefix}cium${a}
  ${a}╿•${prefix}peluk${a}
  ${a}╰•${prefix}ranime${a}
-${a}❏LIMIT & UANG${a}
+ -----🔰 ${a}❏LIMIT & UANG${a} 🔰-----
  ${a}╿•${prefix}limit${a}
  ${a}╿•${prefix}buylimit${a}
  ${a}╿•${prefix}transfer${a}
  ${a}╿•${prefix}dompet${a}
- ${a}╿•${prefix}giftlimit${a}
- ${a}╰•${prefix}leaderboard${a}
-${a}❏GROUP MENU${a}
+ ${a}╿•${prefix}level${a}
+ ${a}╰•${prefix}giftlimit${a}
+ -----🔰 ${a}❏GROUP MENU${a} 🔰-----
  ${a}╿•${prefix}delete${a}
  ${a}╿•${prefix}hidetag${a}
  ${a}╿•${prefix}blocklist${a}
@@ -204,7 +196,7 @@ ${a}❏GROUP MENU${a}
  ${a}╿•${prefix}welcome [1/0]${a}
  ${a}╿•${prefix}antilink [1/0]${a}
  ${a}╰•${prefix}nobadword [enable/disable]${a}
-${a}❏CLOUD STORAGE${a}
+ -----🔰 ${a}❏CLOUD STORAGE${a} 🔰-----
  ${a}╿•${prefix}addsticker${a}
  ${a}╿•${prefix}getsticker${a}
  ${a}╿•${prefix}stickerlist${a}
@@ -217,7 +209,7 @@ ${a}❏CLOUD STORAGE${a}
  ${a}╿•${prefix}addaudio${a}
  ${a}╿•${prefix}getaudio${a}
  ${a}╰•${prefix}audiolist${a}
-${a}❏OWNER MENU${a}
+ -----🔰 ${a}❏OWNER MENU${a} 🔰-----
  ${a}╿•${prefix}bc${a}
  ${a}╿•${prefix}addbadword${a}
  ${a}╿•${prefix}delbadword${a}
@@ -232,17 +224,6 @@ ${a}❏OWNER MENU${a}
  ${a}╿•${prefix}event [1/0]${a}
  ${a}╿•${prefix}clone${a}
  ${a}╰•${prefix}setppbot${a}
- 
-${a}❏THANGKS TO${a}
- ${a}╿${a}
- ${a}╿ • AFFIS JUNIANTO <dev>${a}
- ${a}╿ • FADHIL GRAPHY <partner>${a}
- ${a}╿ • MHANKBARBARS <sc ori>${a}
- ${a}╿ • MYBOT TEAM <team>${a}
- ${a}╿${a}
- ${a}╿ • NOTE : jangan ubah donasi${a}
- ${a}╿${a}
- ${a}╰━━━⊱  ⸨ X-BOT ⸩  ⊰━━━━${a}
 `
 }
 
