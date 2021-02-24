@@ -725,7 +725,7 @@ client.on('group-participants-update', async (anu) => {
                 reply(ind.wait())
                 anu = await fetchJson(`https://videfikri.com/api/ytplay/?query=${play}&apikey=videfikri`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*╭─「 PLAY DOWNLOAD 」*\n│\n│ *• Título* : ${anu.result.title}\n│ *• Canal* : ${anu.result.channel}\n│ *• Tamanho* : ${anu.result.size}\n│ *• Views* : ${anu.result.views}\n│ *• Duração* : ${anu.result.duration}\n│ *• Link* : ${anu.result.url}\n│\n│ *A MÚSICA ESTA SENDO*\n│ *ENVIADA*\n│ *By ©❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥*\n╰───────────`
+                 infomp3 = `*╭─「 PLAY DOWNLOAD 」*\n│\n│ *• Título* : ${anu.result.title}\n│ *• Canal* : ${anu.result.channel}\n│ *• Publicado* : ${anu.result.published_on}\n│ *• Tamanho* : ${anu.result.size}\n│ *• Views* : ${anu.result.views}\n│ *• Duração* : ${anu.result.duration}\n│ *• Link* : ${anu.result.url}\n│\n│ *A MÚSICA ESTA SENDO*\n│ *ENVIADA*\n│ *By ©❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥*\n╰───────────`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
