@@ -283,7 +283,7 @@ function kyun(seconds){
   var hours = Math.floor(seconds / (60*60));
   var minutes = Math.floor(seconds % (60*60) / 60);
   var seconds = Math.floor(seconds % 60);
-  return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
+  return `${pad(hours)} Hora ${pad(minutes)} Minutos ${pad(seconds)} Segundos`
 }
 
 function addMetadata(packname, author) {	
@@ -356,7 +356,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Hallo @${num.split('@')[0]}\Selamat datang di group *${mdata.subject}* yang betah ya di sini`
+				teks = `Olá @${num.split('@')[0]}\ Bem vindo ao grupo *${mdata.subject}*`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -366,7 +366,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `akhirnya beban group berkurang 𝟭,bye bye🥳 @${num.split('@')[0]} jasamu akan di kubur dalam²`
+				teks = `Mais um foi pra puta que pariu, Tchau @${num.split('@')[0]}`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -392,9 +392,9 @@ client.on('group-participants-update', async (anu) => {
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
-			const timi = moment.tz('Asia/Jakarta').add(30, 'days').calendar();
-			const timu = moment.tz('Asia/Jakarta').add(20, 'days').calendar();
+			const time = moment.tz('America/Sao_Paulo').format('DD/MM HH:mm:ss')
+			const timi = moment.tz('America/Sao_Paulo').add(30, 'days').calendar();
+			const timu = moment.tz('America/Sao_Paulo').add(20, 'days').calendar();
             body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 			var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
@@ -484,47 +484,47 @@ client.on('group-participants-update', async (anu) => {
 			
 			//function rank 
 			const levelRole = getLevelingLevel(sender)
-   	     var role = 'Trainee'
+   	     var role = 'Estagiário'
    	     if (levelRole <= 3) {
-   	         role = 'senior trainee'
+   	         role = 'Ouro I'
    	     } else if (levelRole <= 5) {
-   	         role = 'private'
+   	         role = 'Ouro II'
    	     } else if (levelRole <= 7) {
-   	         role = 'corporal'
+   	         role = 'Ouro III'
    	     } else if (levelRole <= 8) {
-   	         role = 'Sergeant'
+   	         role = 'Ouro IV'
    	     } else if (levelRole <= 9) {
-   	         role = 'staff sgt I'
+   	         role = 'Platina I'
    	     } else if (levelRole <= 10) {
-   	         role = 'staff sgt II'
+   	         role = 'Platina II'
    	     } else if (levelRole <= 11) {
-   	         role = 'staff sgt II'
+   	         role = 'Platina III'
    	     } else if (levelRole <= 12) {
-   	         role = 'Sgt 1st class I'
+   	         role = '1st classe I'
    	     } else if (levelRole <= 13) {
-   	         role = 'Sgt 1st class II'
+   	         role = '1st classe II'
    	     } else if (levelRole <= 14) {
-   	         role = 'Sgt 1st class III'
+   	         role = '1st classe III'
    	     } else if (levelRole <= 14) {
-   	         role = 'Ggt 1st class IV'
+   	         role = '1st classe IV'
    	     } else if (levelRole <= 15) {
-   	         role = 'Master sgt I'
+   	         role = 'Mestre I'
    	     } else if (levelRole <= 16) {
-   	         role = 'Master sgt II'
+   	         role = 'Mestre II'
    	     } else if (levelRole <= 17) {
-   	         role = 'Master sgt III'
+   	         role = 'Mestre III'
    	     } else if (levelRole <= 18) {
-   	         role = 'Master sgt IV'
+   	         role = 'Mestre IV'
    	     } else if (levelRole <= 19) {
-   	         role = 'Master sgt V'
+   	         role = 'Mestre V'
    	     } else if (levelRole <= 20) {
-   	         role = '2nd Lt I'
+   	         role = '2nd I'
    	     } else if (levelRole <= 21) {
-   	         role = '2nd Lt II'
+   	         role = '2nd II'
    	     } else if (levelRole <= 22) {
-   	         role = '2nd Lt III'
+   	         role = '2nd III'
    	     } else if (levelRole <= 23) {
-   	         role = '2nd Lt IV'
+   	         role = '2nd IV'
    	     }
    
 			var premi = '*X*'
@@ -561,7 +561,7 @@ client.on('group-participants-update', async (anu) => {
                     for (let lmt of _limit) {
                         if (lmt.id === sender) {
                             let limitCounts = limitawal - lmt.limit
-                            if (limitCounts <= 0) return client.sendMessage(from,`Limit request anda sudah habis\n\n_Note : limit bisa di dapatkan dengan cara ${prefix}buylimit dan dengan naik level_`, text,{ quoted: mek})
+                            if (limitCounts <= 0) return client.sendMessage(from,`Seu limite acabou\n\n_Note : limit bisa di dapatkan dengan cara ${prefix}buylimit dan dengan naik level_`, text,{ quoted: mek})
                             client.sendMessage(from, ind.limitcount(limitCounts), text, { quoted : mek})
                             found = true
                         }
@@ -604,29 +604,29 @@ client.on('group-participants-update', async (anu) => {
 					try {
 						const getmemex = groupMembers.length	
 					    if (getmemex <= memberlimit) {
-						reply(`maaf member group belum memenuhi syarat. minimal member group adalah ${memberlimit}`)
+						reply(`desculpe os membros do grupo não atenderam aos requisitos. membro mínimo do grupo é ${memberlimit}`)
 						setTimeout( () => {
  	                           client.groupLeave(from) 
  					   	}, 5000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("1detik")
+								reply("1segundo")
 							}, 4000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("2detik")
+								reply("2segundos")
 							}, 3000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("3detik")
+								reply("3segundos")
 							}, 2000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("4detik")
+								reply("4segundos")
 							}, 1000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("5detik")
+								reply("5segundos")
 							}, 0)
 					    }
 		       } catch (err) { console.error(err)  }
@@ -635,13 +635,13 @@ client.on('group-participants-update', async (anu) => {
  	   	if (isGroup && isBadWord) {
             if (bad.includes(messagesC)) {
                 if (!isGroupAdmins) {
-                    return reply("JAGA UCAPAN DONG!! 😠")
+                    return reply("*TENHA RESPEITO!!* 😠")
                         .then(() => client.groupRemove(from, sender))
                         .then(() => {
-                            client.sendMessage(from, `*「 ANTI BADWORD 」*\nKamu dikick karena berkata kasar!`, text ,{quoted: mek})
-                        }).catch(() => client.sendMessage(from, `Untung cya bukan admin, kalo admin udah cya kick!`, text , {quoted : mek}))
+                            client.sendMessage(from, `*「 ANTI MÁ PALAVRAS 」*\nvocê foi banido por falar má palavra!`, text ,{quoted: mek})
+                        }).catch(() => client.sendMessage(from, `você é adm por isso não será banido!`, text , {quoted : mek}))
                 } else {
-                    return reply( "Tolong Jaga Ucapan Min 😇")
+                    return reply( "*PORFAVOR TENHA RESPEITO!* 😇")
                 }
             }
         }
@@ -650,33 +650,33 @@ client.on('group-participants-update', async (anu) => {
 				if (messagesC.includes("://chat.whatsapp.com/")){
 					if (!isGroup) return
 					if (!isAntiLink) return
-					if (isGroupAdmins) return reply('karena kamu adalah admin group, bot tidak akan kick kamu')
+					if (isGroupAdmins) return reply('*LINK DETECTADO!*\ncomo você é administrador não será banido!')
 					client.updatePresence(from, Presence.composing)
-					if (messagesC.includes("#izinadmin")) return reply("#izinadmin diterima")
+					if (messagesC.includes("#permissão de administrador")) return reply("#permissão de administrador recebido")
 					var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-						reply(`Link Group Terdeteksi maaf ${sender.split("@")[0]} anda akan di kick dari group 5detik lagi`)
+						reply(`*LINK DETECTADO* ${sender.split("@")[0]}\nvocê será banido em 5 segundos!`)
 						setTimeout( () => {
 						client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
 					}, 5000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("1detik")
+						reply("1segundo")
 					}, 4000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("2detik")
+						reply("2segundos")
 					}, 3000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("3detik")
+						reply("3segundos")
 					}, 2000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("4detik")
+						reply("4segundos")
 					}, 1000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("5detik")
+						reply("5segundos")
 					}, 0)
 				}
  	       
@@ -724,7 +724,7 @@ client.on('group-participants-update', async (anu) => {
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					const tex = encodeURIComponent(body.slice(8))
-					if (!tex) return client.sendMessage(from, 'MASUKAN URL/TEKS UNTUK DI JADIKAN QR', text, {quoted: mek})
+					if (!tex) return client.sendMessage(from, '*INSIRA O URL ou TEXTO PARA FAZER QR*', text, {quoted: mek})
 					const buff = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
 					client.sendMessage(from, buff, image, {quoted: mek})
 					await limitAdd(sender)
