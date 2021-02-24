@@ -719,14 +719,13 @@ client.on('group-participants-update', async (anu) => {
 				reply(`*「 PREMIUM EXPIRED 」*\n\n➸ *ID*: ${sender.split('@')[0]}\n➸ *Premium left*: ${cekExp.days} day(s) ${cekExp.hours} hour(s) ${cekExp.minutes} minute(s)`)
 				break
                   case 'play':
-                  case 'playmp3':
                   play = body.slice(5)
                   if (!isRegistered) return reply(ind.noregis())
 		  if (isLimit(sender)) return reply(ind.limitend(pusname)) 
                 reply(ind.wait())
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
+                anu = await fetchJson(`https://videfikri.com/api/ytplay/?query=${play}&apikey=videfikri`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*╭─「 PLAY DOWNLOAD 」*\n│\n│ *• Título* : ${anu.result.title}\n│ *• Fonte* : ${anu.result.source}\n│ *• Tamanho* : ${anu.result.size}\n│\n│ *A MÚSICA ESTA SENDO*\n│ *ENVIADA*\n│ *By ©❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥*\n╰───────────`
+                 infomp3 = `*╭─「 PLAY DOWNLOAD 」*\n│\n│ *• Título* : ${anu.result.title}\n│ *• Canal* : ${anu.result.channel}\n│ *• Tamanho* : ${anu.result.size}\n│ *• Views* : ${anu.result.views}\n│ *• Duração* : ${anu.result.duration}\n│ *• Link* : ${anu.result.url}\n│\n│ *A MÚSICA ESTA SENDO*\n│ *ENVIADA*\n│ *By ©❁̸⃪͎۪۪۪〫⃕͘͡⃟💸ƚՇᮟℛ❂•᭄ꦿ⃟꧇۪⃟🔥*\n╰───────────`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
